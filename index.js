@@ -1,12 +1,11 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const { v4: uuidv4 } = require('uuid');
 const fs = require('fs');
 const path = require('path');
 
 const app = express();
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 const PORT = process.env.PORT || 3000;
 const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
@@ -20,9 +19,9 @@ const sessions = {};
 function frameHtml(title, bodyHtml, buttons = [], uid = null) {
   if (!uid) uid = uuidv4();
 
-  const btnMeta = buttons.map((b, i) => {
-    return `<meta name="fc:frame:button:${i+1}" content="${b}"/>`;
-  }).join('');
+  const btnMeta = buttons
+    .map((b, i) => `<meta name="fc:frame:button:${i + 1}" content="${b}"/>`)
+    .join('');
 
   const postUrl = `${BASE_URL}/answer`;
 
@@ -74,4 +73,4 @@ app.post("/answer", (req, res) => {
   res.send(frameHtml(nextQ.q, `Skor sementara: ${session.score}`, nextQ.choices, uid));
 });
 
-app.listen(PORT, () => console.log(`Server running at ${BASE_URL}`));
+app.listen(PORT, () => console.log(`✅ Server running at: ${BASE_URL}`));
