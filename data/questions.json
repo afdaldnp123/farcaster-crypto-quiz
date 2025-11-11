@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "q": "Apa singkatan dari 'BTC'?",
+    "choices": ["Bitcoin", "BitConnect", "Basic Token", "Binary Currency"],
+    "answer": 0
+  },
+  {
+    "id": 2,
+    "q": "Apa fungsi utama smart contract?",
+    "choices": ["Menyimpan aset fisik", "Menjalankan aturan otomatis di blockchain", "Membuat private keys", "Menambang koin"],
+    "answer": 1
+  },
+  {
+    "id": 3,
+    "q": "Optimism adalah apa?",
+    "choices": ["AMM Exchange", "Layer-2 Ethereum", "DEX aggregator", "Wallet hardware"],
+    "answer": 1
+  },
+  {
+    "id": 4,
+    "q": "Apa itu staking?",
+    "choices": ["Menukar token ke fiat", "Mengunci token untuk reward", "Menjalankan node mining BTC", "Menghapus transaksi"],
+    "answer": 1
+  },
+  {
+    "id": 5,
+    "q": "Apa yang dimaksud dengan nonce dalam blockchain?",
+    "choices": ["Alamat wallet", "Angka sekali pakai", "Nama token", "Protokol bridge"],
+    "answer": 1
+  }
+]
